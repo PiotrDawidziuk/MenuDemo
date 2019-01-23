@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,12 +20,19 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        super.onOptionsItemSelected(item);
 
-        
+        switch (item.getItemId()){
+            case R.id.settings:
+                Toast.makeText(this, "Settings selected", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.help:
+                Toast.makeText(this, "Help selected", Toast.LENGTH_SHORT).show();
+                return true;
+                default:
+                    return false;
 
-         super.onOptionsItemSelected(item);
-
-         return true;
+        }
     }
 
     @Override
